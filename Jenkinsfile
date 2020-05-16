@@ -16,6 +16,16 @@ pipeline {
               }
          }
 
+    stage('curl Test') {
+            steps {
+              sh 'echo "Testing... should return HTTP/1.1 200 OK"'
+              sh ''' 
+              curl -I http://devopsjenkins.s3-website-us-west-2.amazonaws.com/
+              curl http://devopsjenkins.s3-website-us-west-2.amazonaws.com/
+                
+              '''  
+                }
+  
   }
 
 }
